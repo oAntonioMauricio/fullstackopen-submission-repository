@@ -8,10 +8,10 @@ const Button = ({ onClick, text }) => {
   )
 }
 
-const Statistic = ({ text, number }) => {
+const Statistic = ({ text, number, isPercent }) => {
   return (
     <div>
-      {text} {number}
+      {text} {isNaN(number) ? 'Need more feedback.' : isPercent ? number + '%' : number}
     </div>
   )
 }
@@ -49,6 +49,9 @@ const App = () => {
       <Statistic text={'Good'} number={good} />
       <Statistic text={'Neutral'} number={neutral} />
       <Statistic text={'Bad'} number={bad} />
+      <Statistic text={'Total'} number={good + neutral + bad} />
+      <Statistic text={'Average'} number={((1 * good) + (0 * neutral) + (-1 * bad)) / (good + neutral + bad)} />
+      <Statistic text={'Positive'} number={good * 100 / (good + neutral + bad)} isPercent={true} />
     </div>
   )
 }
