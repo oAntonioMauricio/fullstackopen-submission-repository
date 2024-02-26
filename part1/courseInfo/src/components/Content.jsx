@@ -2,13 +2,13 @@ import Part from "./Part"
 
 const Content = (props) => {
 
-    let arrayOfParts = props.arrayOfParts;
+    let arrayOfParts = props.parts;
 
     return (
         <>
-            <Part part={arrayOfParts[0].part} exercises={arrayOfParts[0].exercises} />
-            <Part part={arrayOfParts[1].part} exercises={arrayOfParts[1].exercises} />
-            <Part part={arrayOfParts[2].part} exercises={arrayOfParts[2].exercises} />
+            <Part part={arrayOfParts[0].name} exercises={arrayOfParts[0].exercises} />
+            <Part part={arrayOfParts[1].name} exercises={arrayOfParts[1].exercises} />
+            <Part part={arrayOfParts[2].name} exercises={arrayOfParts[2].exercises} />
         </>
     )
 }
