@@ -14,14 +14,30 @@ const App = () => {
   }
 
   const onNameSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    const nameFromFrom = {
-      name: newName
+    // check if name is present
+    let isNamePresent = false;
+    for (const person of persons) {
+      if (person.name.toLowerCase() === newName.toLowerCase()) {
+        isNamePresent = true;
+        break;
+      }
     }
 
-    setPersons(persons.concat(nameFromFrom));
-    setNewName('');
+    // deal with namePresent or !namePresent
+    if (isNamePresent) {
+      alert(`${newName} is already on the phonebook.`)
+    } else {
+
+      const nameFromFrom = {
+        name: newName
+      }
+
+      setPersons(persons.concat(nameFromFrom));
+      setNewName('');
+    }
+
   }
 
   return (
