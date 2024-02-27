@@ -1,10 +1,10 @@
 const Person = (props) => {
 
-    const { name } = props;
+    const { name, number } = props;
 
     return (
         <>
-            <p>{name}</p>
+            <p>{name} - {number}</p>
         </>
     )
 }
