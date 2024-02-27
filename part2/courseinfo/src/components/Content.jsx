@@ -9,10 +9,8 @@ const Content = (props) => {
 
     return (
         <>
-            {parts.map((part) =>
-                <Part key={part.id} part={part} />
-            )}
-            <p>Total of {totalExs} exercises.</p>
+            {parts.map((part) => <Part key={part.id} part={part} />)}
+            <h4>Total of {totalExs} exercises.</h4>
         </>
     )
 }
