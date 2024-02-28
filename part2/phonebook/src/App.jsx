@@ -91,7 +91,7 @@ const App = () => {
       personsService
         .deletePerson(key)
         .then(deletedPerson => {
-          setPersons(persons.filter(person => person.id !== key))
+          setPersons(persons.filter(person => person.id !== deletedPerson.id))
         })
     }
   }
