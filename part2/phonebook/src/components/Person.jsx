@@ -1,10 +1,10 @@
 const Person = (props) => {
 
-    const { name, number } = props;
+    const { name, number, handlePersonDelete } = props;
 
     return (
         <>
-            <p>{name} - {number}</p>
+            <p>{name} - {number} <button onClick={handlePersonDelete}>Delete</button></p>
         </>
     )
 }
